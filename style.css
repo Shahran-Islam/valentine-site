@@ -1,0 +1,140 @@
+body {
+    background-color: #FFC5D3;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #4A4A4A;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+    text-align: center;
+    padding: 30px 15px;
+    max-width: 1000px;
+    margin: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#main-gif {
+    width: 200px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+h1 { color: #d32f2f; margin-top: 20px; font-size: 1.5rem; }
+
+.buttons {
+    margin: 30px 0;
+    height: 150px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    touch-action: manipulation;
+}
+
+#yesButton {
+    background: #ff4081;
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 64, 129, 0.4);
+    z-index: 10;
+}
+
+#noButton {
+    background: #ffffff;
+    color: #ff4081;
+    border: 2px solid #ff4081;
+    position: absolute;
+    left: calc(50% + 60px);
+    z-index: 999;
+    transition: left 0.15s ease, top 0.15s ease;
+}
+
+.love-meter-section {
+    margin-top: 40px;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    border-radius: 20px;
+    width: 90%;
+}
+
+#heart-meter { font-size: 3.5rem; cursor: pointer; transition: transform 0.2s; }
+#heart-meter:active { transform: scale(1.2); }
+
+.photo-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 10px;
+}
+
+.polaroid {
+    background: white;
+    padding: 15px;
+    padding-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    flex: 1 1 280px;
+    max-width: 300px;
+}
+
+.polaroid img { width: 100%; height: auto; border: 1px solid #eee; }
+
+.coupon-section { margin: 50px 0 100px 0; width: 90%; max-width: 400px; }
+
+#coupon-box {
+    background: #ff4081;
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    border: 3px dashed white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+}
+
+.revealed-ticket {
+    background: #ffffff !important;
+    color: #ff4081 !important;
+    border: 3px dashed #ff4081 !important;
+    animation: popIn 0.5s ease;
+}
+
+/* Cow & Bubble Styles */
+#cow-container { position: fixed; bottom: 10px; left: 10px; z-index: 3000; cursor: pointer; display: flex; flex-direction: column; align-items: center; }
+#cow-plush { width: 80px; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2)); transition: transform 0.3s; }
+#cow-bubble {
+    background: white; padding: 10px 15px; border-radius: 15px; margin-bottom: 10px;
+    font-size: 0.9rem; font-weight: bold; color: #ff4081; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    opacity: 0; transform: translateY(10px); transition: all 0.3s ease; pointer-events: none;
+}
+#cow-bubble.show-bubble { opacity: 1; transform: translateY(0); }
+
+/* Music Styles */
+.music-container { display: flex; align-items: center; gap: 10px; position: fixed; bottom: 20px; right: 20px; z-index: 2000; }
+#playBtn { background: white; padding: 8px 15px; border-radius: 50px; border: 1px solid #ff4081; cursor: pointer; }
+#visualizer { display: flex; align-items: flex-end; gap: 3px; height: 20px; }
+#visualizer.hidden { display: none; }
+.bar { width: 4px; height: 5px; background: #ff4081; animation: bounce 0.6s infinite alternate; }
+.bar:nth-child(2) { animation-duration: 0.4s; }
+.bar:nth-child(3) { animation-duration: 0.7s; }
+
+@keyframes bounce { from { height: 5px; } to { height: 20px; } }
+@keyframes popIn { 0% { transform: scale(0.8); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+.heart { position: fixed; top: -5vh; animation: fall 4s linear forwards; z-index: -1; }
+@keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }

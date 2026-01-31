@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Favorite Person ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div id="image-container">
+        <img id="main-gif" src="assets/hug.gif" alt="Bubu Dudu Hug">
+    </div>
+
+    <h1 id="question">Will you be my Valentine? ❤️</h1>
+
+    <div class="buttons">
+        <button id="yesButton" onclick="handleYes()">Yes!</button>
+        <button id="noButton" onmouseover="moveButton()">No</button>
+    </div>
+
+    <div class="love-meter-section">
+        <div id="heart-meter" onclick="addLove()">❤️</div>
+        <p>Click the heart for a reason I love you!</p>
+        <div id="reason-display"></div>
+    </div>
+
+    <div class="gallery">
+        <h2>Our Memories</h2>
+        <div class="photo-row">
+        </div>
+    </div>
+
+    <div class="coupon-section">
+        <div id="coupon-box" onclick="revealCoupon()">
+            🎁 Click for a Surprise!
+        </div>
+    </div>
+</div>
+
+<div id="cow-container" onclick="toggleCowBubble()">
+    <div id="cow-bubble">Shahran loves you so much! ❤️</div>
+    <img src="assets/cow.png" id="cow-plush" alt="Cute Cow">
+</div>
+
+<div class="music-container">
+    <div id="visualizer" class="hidden">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <button id="playBtn" onclick="toggleMusic()">🎵 Play Our Song</button>
+    <audio id="loveSong" loop>
+        <source src="assets/Miguel - All I Want Is You feat. J. Cole.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
